@@ -1,0 +1,31 @@
+.ListContent {
+  background: rgb(250, 237, 240);
+  color: rgb(22, 24, 83);
+  padding: 0.5rem;
+  text-align: center;
+  /* border: 0.6rem solid rgb(41, 44, 109);   */
+  box-shadow: 8px 10px 1px rgb(236, 37, 90);
+  border-radius: 8px;
+  position: relative;
+  transition: background 400ms, box-shadow 700ms;
+}
+.ListContent:hover {
+  background: rgb(255, 255, 255);
+  box-shadow: -8px -10px 1px rgb(236, 37, 90);
+}
+.ListContent img{
+  width: 100%;
+}
+.ListContent span{
+  color: rgb(236, 37, 90);
+}
+
+.link-card {
+  background-color: transparent;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

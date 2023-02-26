@@ -1,0 +1,39 @@
+.carta {
+  position: fixed;
+  opacity: 0;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.634);
+  display: grid;
+  place-content: center;
+  transition: all 1s;
+}
+.show-item{
+  opacity: 1;
+  z-index: 10;
+}
+
+.carta-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 0.2rem 1rem;
+  background: rgba(116, 1, 7, 0.6);
+}
+.carta-content img {
+  width: 130px;
+  border-radius: 1.2rem;
+}
+.close-modal {
+  margin: 0 0rem 0.5rem;
+  align-self: flex-end;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.close-modal:hover {
+  background-color: rgba(0, 0, 0, 0.579);
+}

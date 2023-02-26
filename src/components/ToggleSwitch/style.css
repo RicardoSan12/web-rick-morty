@@ -1,0 +1,94 @@
+#toggle-switch {
+  display: none;
+}
+
+#toggle-switch + label {
+  display: block;
+  position: absolute;
+  top: 4.2rem;
+  right: 10px;
+  width: 65px;
+  height: 32px;
+  background-color: var(--secondary);
+  border-radius: 56px;
+  cursor: pointer;
+  transition: 0.3s ease background-color, box-shadow 300ms ease-in,
+    transform 300ms;
+  overflow: hidden;
+}
+#toggle-switch + label:hover {
+  box-shadow: 5px 8px 0px red;
+}
+#toggle-switch + label:active {
+  transform: scale(0.9);
+}
+
+#star {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--primary);
+  transform: scale(1) rotate(0deg);
+  border-radius: 50%;
+  transition: transform 300ms ease, 0.3s ease background-color;
+  z-index: 1;
+}
+
+#star::before,
+#star::after {
+  content: '★';
+  position: absolute;
+  top: 0px;
+  left: -4px;
+  font-size: 31px;
+  line-height: 16px;
+  color: var(--primary);
+  transition: 0.3s ease color;
+}
+#star::after {
+  transform: rotateZ(36deg);
+}
+
+#moon {
+  position: absolute;
+  bottom: -32px;
+  right: 4px;
+  padding: 11px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  transform: scale(0.2);
+  transition: 0.3s ease bottom, transform 300ms ease;
+}
+
+#moon:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  padding: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  transition: 0.3s ease background-color, top 300ms ease, left 300ms ease;
+}
+
+#toggle-switch:checked + label,
+#toggle-switch:checked + label #moon:before {
+  background-color: var(--secondary);
+}
+
+#toggle-switch:checked + label #star {
+  transform: translate(25px, -6px) scale(0.3) rotate(90deg);
+}
+
+#toggle-switch:checked + label #moon {
+  bottom: 5px;
+  transform: scale(1);
+}
+
+@media screen and (min-width: 500px) {
+  #toggle-switch + label {
+    top: 5.4rem;
+  }
+}

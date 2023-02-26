@@ -1,0 +1,36 @@
+.link {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.7rem;
+  padding: 2px 6px;
+  transition: background 400ms ease-in, box-shadow 400ms ease-in, color 400ms,
+    transform 200ms ease;
+}
+.link:hover,
+.link:active {
+  color: var(--resaltado);
+}
+.link:active {
+  transform: scale(0.965);
+}
+
+.link--btn {
+  color: var(--primary);
+  background: var(--secondary);
+  padding: 0.3rem 0.6rem;
+  font-weight: 700;
+}
+.link--btn:hover,
+.link--btn:active,
+.link--active {
+  background: var(--secondary-hover);
+  box-shadow: 4px 6px 0px var(--resaltado);
+}
+
+@media screen and (min-width: 500px) {
+  .link--btn {
+    padding: 0.5rem 1rem;
+  }
+}

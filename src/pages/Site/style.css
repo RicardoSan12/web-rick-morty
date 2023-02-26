@@ -1,0 +1,9 @@
+.site__title {
+  text-transform: capitalize;
+}
+.site__searched {
+  margin-left: 8px;
+  padding: 8px;
+  border: 1px solid var(--secondary);
+  border-radius: 18px;
+}

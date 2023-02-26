@@ -1,0 +1,66 @@
+/* rgb(22, 24, 83)  | rgb(41, 44, 109)  | rgb(250, 237, 240)  | rgb(236, 37, 90) */
+
+.CardContent {
+  transition: all 1s;
+  /* transform: scale(0.5); */
+}
+.show-card {
+  opacity: 1;
+  z-index: 10;
+  color: darkblue;
+  display: grid;
+  /* transform: scale(1); */
+}
+
+.CardContent-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  border-radius: 1rem;
+  padding: 0.2rem 1rem;
+  background: rgba(116, 1, 7, 0.6);
+}
+.CardContent-info img {
+  width: 80%;
+  max-width: 200px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.CardContent-close:hover {
+  background-color: rgba(0, 0, 0, 0.579);
+}
+/* -------------------- */
+.CardContentId {
+  width: 100%;
+  max-width: 450px;
+  background-color: rgb(250, 237, 240);
+  color: rgb(22, 24, 83);
+  padding: 0.5rem 1rem;
+  line-height: 1.8rem;
+  box-shadow: 8px 10px 1px rgb(236, 37, 90);
+
+  margin: auto;
+}
+
+.CardContentId span {
+  color: rgb(236, 37, 90);
+  margin: 0 0 0 5px;
+  font-weight: 700;
+}
+.CardContentId p {
+  font-size: 1rem;
+}
+
+.CardContentId ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 10px 15px;
+}
+.CardContentId ul img {
+  width: 100%;
+  border-radius: 50%;
+  outline: 2px solid rgb(236, 37, 90);
+}

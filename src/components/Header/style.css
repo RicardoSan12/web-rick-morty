@@ -1,0 +1,28 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: var(--secondary);
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 0 7px;
+}
+.navbar__menu .navbar__title {
+  font-size: 0.4rem;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 400px) {
+  .navbar__menu {
+    gap: 5px;
+  }
+  .navbar__menu .navbar__title {
+    font-size: 0.8rem;
+  }
+}

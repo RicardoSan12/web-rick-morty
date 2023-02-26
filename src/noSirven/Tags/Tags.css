@@ -1,0 +1,27 @@
+.Tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.Tags ul {
+  background: var(--primary-hover);
+  border-radius: 10px;
+  padding: 5px;
+}
+.Tags li {
+  /* color: rgb(22, 24, 83); */
+  padding: 4px 10px 4px 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 500ms, border-bottom 300ms, color 500ms;
+}
+.Tags li:hover {
+  color: rgb(236, 37, 90);
+  background: var(--secondary);
+  border-bottom: 5px solid rgb(236, 37, 90);
+}
