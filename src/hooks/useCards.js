@@ -22,22 +22,30 @@ export default function useCards({ section = 'location', pathName = '' }) {
     [section]
   );
   useEffect(() => {
-    setState((prevState) => ({ ...prevState, currentPage: 1 }))
-  },[section, pathName, keyword])
+    setState((prevState) => ({ ...prevState, currentPage: 1 }));
+  }, [section, pathName, keyword]);
 
   const timeout = pathName ? 600 : 1500;
   useEffect(() => {
-    const params = !keyword && pathName ? getParams(pathName) : { name: keyword };
+    const params =
+      !keyword && pathName ? getParams(pathName) : { name: keyword };
     setState((prevState) => ({ ...prevState, loading: true }));
     const timer = setTimeout(() => {
       getCards({ section, page: currentPage, ...params }).then(
-        ({ cards, pages }) => setState((prevState) => ({ ...prevState, cards, totalPages: pages, loading: false}))
+        ({ cards, pages }) =>
+          setState((prevState) => ({
+            ...prevState,
+            cards,
+            totalPages: pages,
+            loading: false,
+          }))
       );
     }, timeout);
     return () => clearTimeout(timer);
   }, [section, currentPage, pathName, keyword]);
 
-  const changeKeyword = ({ keyword }) => setState((prevState) => ({ ...prevState, keyword }));
+  const changeKeyword = ({ keyword }) =>
+    setState((prevState) => ({ ...prevState, keyword }));
 
   const { sectionName } = sections.find(({ name }) => name === section);
   let query = { name: `${sectionName} ${keyword}` };
@@ -47,15 +55,14 @@ export default function useCards({ section = 'location', pathName = '' }) {
     saveKeywordLocalStorage(query);
   };
 
-  const getPageButtons = (range=2) => {
+  const getPageButtons = (range = 2) => {
     let buttons = [0];
-    if (section === 'episode') range = 1
-    for(let num=1; num < range+1; num++){
-      if (totalPages - num > currentPage) buttons=[...buttons, num]
-      if (currentPage > 1) buttons = [-num,...buttons]
+    for (let num = 1; num < range + 1; num++) {
+      if (totalPages - num >= currentPage) buttons = [...buttons, num];
+      if (currentPage > 1 && currentPage != 2) buttons = [-num, ...buttons];
     }
-    return buttons
-  }
+    return buttons;
+  };
 
   const changePage = ({ pageNumber }) =>
     setState((prevState) => ({ ...prevState, currentPage: pageNumber }));
